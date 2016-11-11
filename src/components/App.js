@@ -1,4 +1,6 @@
 import React from 'react';
+import NavLink from './NavLink';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -10,7 +12,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <h2>GET SOME ROUTES!</h2>
+      <div>
+        <ul role="nav">
+          <li><NavLink to="/" onlyActiveOnIndex={true}>Home</NavLink></li>
+          <li><NavLink to="/about">About</NavLink></li>
+          <li><NavLink to="/projects">Projects</NavLink></li>
+        </ul>
+
+        {this.props.children}
+      </div>
     );
   }
 }

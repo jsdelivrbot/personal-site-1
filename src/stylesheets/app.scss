@@ -24,7 +24,26 @@ body {
       padding: 0 15px;
     }
   }
+  .icon-container {
+    text-align: center;
+  }
+  .code-icons {
+    width: 75%;
+    padding: 15px 0;
+    margin: 0 auto;
+    text-align: center;
+    i.devicon {
+      padding: 0 7px;
+      font-size: 4em;
+      color: $light-teal;
+      opacity: .6;
+    }
+  }
+
   .active {
     color: green;
+  }
+  .hidden {
+    display: none;
   }
 }

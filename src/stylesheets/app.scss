@@ -1,21 +1,3 @@
-@mixin nav-inline {
-  display: flex;
-  justify-content: center;
-  li {
-    padding: 0 15px;
-  }
-}
-@mixin devicon-style {
-  padding: 0 7px;
-  font-size: 3em;
-  color: $light-teal;
-  opacity: .6;
-  transition: all 1s linear;
-  &:hover {
-    color: $bright-yellow;
-    opacity: .8;
-  }
-}
 html, body {
   padding: 0;
   margin: 0;
@@ -24,7 +6,7 @@ html, body {
 body {
   font-family: 'Raleway', Helvetica, sans-serif;
   background: url('http://akveo.com/blur-admin/assets/img/blur-bg-blurred.jpg') center 0 fixed;
-
+  background-size: cover;
   padding-bottom: 100px;
   h1,
   h2,
@@ -93,59 +75,161 @@ body {
   }
   .home {
     i {
-      font-size: 5em;
-      color: $lighter-teal;
-      margin: 0 10px;
+      font-size: 8em;
+      color: $bright-yellow;
+      font-weight: bold;
+      width: 100%;
       text-align: center;
-    }
-    i.sm {
-      font-size: 3.6em;
+      margin: 20px auto;
+      opacity: .5;
     }
   }
   .about {
     height: 100%;
     overflow: auto;
+    .intro {
+      margin: 0;
+    }
+    .profile-photo {
+      width: 40%;
+      border-radius: 50%;
+      opacity: .85;
+      margin: 25px auto;
+      margin-bottom: 20%;
+    }
     p {
-      font-size: .85em;
+      font-size: 1em;
+      font-family: 'Montserrat';
+      color: $bright-yellow;
       opacity: .7;
+      font-style: oblique;
       line-height: 1.7em;
       padding-top: 0;
     }
   }
+  button.cv,
   button.contact {
-    background: none;
-    margin: 10px 0 30px;
-    border: 4px solid $lighter-teal;
-    font-size: 2em;
-    text-transform: lowercase;
-    font-variant: small-caps;
-    padding: 7px;
-    color: $light-teal;
-    transition: all 1s ease-out;
-    &:hover {
-      color: $bright-yellow;
-      border-color: $bright-yellow;
-    }
+    @include home-button($lighter-teal, $bright-yellow);
   }
-  .icon-container {
-    width: 100%;
-    margin-bottom: 30px;
-    .code-icons {
-      display: flex;
-      justify-content: center;
-      flex-flow: wrap;
-      padding: 15px 0;
-      margin: 0 auto;
-      text-align: center;
-      i.devicon {
-        @include devicon-style;
+  button.github {
+    @include home-button($bright-yellow, $lighter-teal);
+  }
+  .skills {
+    .page-header {
+      text-align: right;
+    }
+    .skill-content {
+      padding-bottom: 20px;
+      .intro {
+        margin-bottom: 0;
+        text-align: right;
+        opacity: .85;
+        font-size: 1.6em;
+      }
+      .icon-container {
+        width: 100%;
+        margin-bottom: 40px;
+        .code-icons {
+          display: flex;
+          justify-content: center;
+          flex-flow: wrap;
+          padding: 15px 0;
+          margin: 0 auto;
+          text-align: center;
+          i.devicon {
+            @include devicon-style;
+          }
+        }
       }
     }
+    h4.outro {
+      font-size: 1.3em;
+      color: rgba(0, 0, 0, .5);
+      width: 75%;
+      text-align: right;
+      float: right;
+      line-height: 1.4em;
+    }
+  }
+  span.bright {
+    opacity: 1;
+    color: $bright-yellow;
+    padding-bottom: 5px;
+    border-bottom: 2px solid $lighter-teal;
+  }
+  .contact-modal {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.8);
+  }
+  #contact-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+    .field {
+      width: 80%;
+      margin: 20px auto;
+      label {
+        color: $light-teal;
+        font-size: 1.5em;
+        text-transform: lowercase;
+        font-variant: small-caps;
+        padding-right: 15px;
+      }
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 60%;
+        border: none;
+        background: none;
+        border-bottom: 1px solid $bright-yellow;
+        padding: 7px;
+        font-size: .9em;
+        color: $lighter-teal;
+      }
+      textarea {
+        height: 100px;
+        border: 1px solid $bright-yellow;
+      }
+    }
+    button {
+      width: 20%;
+      font-size: 1.2em;
+      margin-top: 20px;
+      color: $bright-yellow;
+      padding: 7px;
+      background: none;
+      border: 1px solid $lighter-teal;
+      border-radius: 10px;
+      transition: all 1s linear;
+      &:hover {
+        color: $light-teal;
+        background-color: rgba(255, 255, 255, .25);
+        border: 1px solid #ccc;
+      }
+    }
+    i {
+      font-size: 2em;
+      align-self: flex-end;
+      padding: 10px;
+    }
+
   }
   .active {
     color: #fff;
   }
   .hidden {
     display: none;
+  }
+  .block {
+    display: block;
   }
 }

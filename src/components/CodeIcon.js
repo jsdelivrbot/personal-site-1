@@ -20,12 +20,23 @@ const CodeIcon = props => {
   })
 
   return (
-    <div className="icon-container">
-      <div className="code-icons">
-        {setOne}
+    <div>
+      <div className="skill-content">
+        <h4 className="intro"><span className="bright">I love to code.</span> I'm a creative problem-solver & abstract thinker.</h4>
+        <div className="icon-container">
+          <div className="code-icons">
+            {setOne}
+          </div>
+        </div>
       </div>
-      <div className="code-icons">
-        {setTwo}
+
+      <div className="skill-content">
+        <h4 className="intro"><span className="bright">I love to design.</span> I'm a visual learner & value aesthetics more than anything.</h4>
+        <div className="icon-container">
+          <div className="code-icons">
+            {setTwo}
+          </div>
+        </div>
       </div>
     </div>
   )

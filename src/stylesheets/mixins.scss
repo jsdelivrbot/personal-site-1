@@ -1,0 +1,35 @@
+@mixin nav-inline {
+  display: flex;
+  justify-content: center;
+  li {
+    padding: 0 15px;
+  }
+}
+@mixin devicon-style {
+  padding: 0 7px;
+  line-height: 1.5em;
+  font-size: 3em;
+  color: $light-teal;
+  opacity: .6;
+  transition: all 1s linear;
+  &:hover {
+    color: $bright-yellow;
+    opacity: .8;
+  }
+}
+
+@mixin home-button($main, $hover) {
+  background: none;
+  margin: 10px 10px 30px;
+  border: 4px solid $main;
+  font-size: 2em;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  padding: 7px;
+  color: $main;
+  transition: all 1s ease-out;
+  &:hover {
+    color: $hover;
+    border-color: $hover;
+  }
+}

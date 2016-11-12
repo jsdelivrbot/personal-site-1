@@ -4,8 +4,9 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "heroku-postbuild": "NODE_ENV=production npm run webpack -- -p",
-    "start": "npm run webpack -- --watch --history-api-fallback",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:dev": "webpack-dev-server --inline --content-base public --history-api-fallback",
+    "start:prod": "webpack && node server.js",
     "test": "node_modules/.bin/karma start karma.conf.js",
     "webpack": "node_modules/.bin/webpack --config webpack.config.js"
   },
@@ -39,6 +40,9 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.7.4",
+    "compression": "^1.6.2",
+    "express": "^4.14.0",
+    "if-env": "^1.0.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",

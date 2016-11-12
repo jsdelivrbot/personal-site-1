@@ -1,13 +1,13 @@
 var webpack = require('webpack');
 
-module.exports = {
+var config  = {
   entry: {
     path: './src/main.js'
   },
   output: {
-    path: './build',
+    path: 'public',
     filename: 'bundle.js',
-    publicPath: ''
+    publicPath: '/'
   },
   module: {
     loaders: [
@@ -22,9 +22,11 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
+  plugins: process.env.NODE_ENV === 'production' ? [
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin()
+  ] : [],
   devtool: 'eval-source-map',
   devServer: {
     contentBase: './build',
@@ -40,3 +42,5 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' })
   ];
 }
+
+module.exports = config;

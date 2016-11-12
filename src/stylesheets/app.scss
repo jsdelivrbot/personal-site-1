@@ -75,29 +75,33 @@ body {
   }
   .home {
     i {
-      font-size: 5em;
-      color: $lighter-teal;
-      margin: 0 10px;
+      font-size: 8em;
+      color: $bright-yellow;
+      font-weight: bold;
+      width: 100%;
       text-align: center;
-    }
-    i.sm {
-      font-size: 3.6em;
+      margin: 20px auto;
+      opacity: .5;
     }
   }
   .about {
     height: 100%;
     overflow: auto;
     p {
-      font-size: .85em;
+      font-size: 1em;
+      font-family: 'Montserrat';
+      color: $bright-yellow;
       opacity: .7;
+      font-style: oblique;
       line-height: 1.7em;
       padding-top: 0;
     }
   }
+  button.cv,
   button.contact {
     @include home-button($lighter-teal, $bright-yellow);
   }
-  button.cv {
+  button.github {
     @include home-button($bright-yellow, $lighter-teal);
   }
   .skills {
@@ -143,8 +147,6 @@ body {
     padding-bottom: 5px;
     border-bottom: 2px solid $lighter-teal;
   }
-
-
   .contact-modal {
     position: fixed;
     z-index: 1;

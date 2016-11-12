@@ -6,6 +6,7 @@ html, body {
 body {
   font-family: 'Raleway', Helvetica, sans-serif;
   background: url('http://akveo.com/blur-admin/assets/img/blur-bg-blurred.jpg') center 0 fixed;
+  background-size: cover;
   padding-bottom: 100px;
   h1,
   h2,
@@ -99,21 +100,51 @@ body {
   button.cv {
     @include home-button($bright-yellow, $lighter-teal);
   }
-  .icon-container {
-    width: 100%;
-    margin-bottom: 40px;
-    .code-icons {
-      display: flex;
-      justify-content: center;
-      flex-flow: wrap;
-      padding: 15px 0;
-      margin: 0 auto;
-      text-align: center;
-      i.devicon {
-        @include devicon-style;
+  .skills {
+    .page-header {
+      text-align: right;
+    }
+    .skill-content {
+      padding-bottom: 20px;
+      .intro {
+        margin-bottom: 0;
+        text-align: right;
+        opacity: .85;
+        font-size: 1.6em;
+      }
+      .icon-container {
+        width: 100%;
+        margin-bottom: 40px;
+        .code-icons {
+          display: flex;
+          justify-content: center;
+          flex-flow: wrap;
+          padding: 15px 0;
+          margin: 0 auto;
+          text-align: center;
+          i.devicon {
+            @include devicon-style;
+          }
+        }
       }
     }
+    h4.outro {
+      font-size: 1.3em;
+      color: rgba(0, 0, 0, .5);
+      width: 75%;
+      text-align: right;
+      float: right;
+      line-height: 1.4em;
+    }
   }
+  span.bright {
+    opacity: 1;
+    color: $bright-yellow;
+    padding-bottom: 5px;
+    border-bottom: 2px solid $lighter-teal;
+  }
+
+
   .contact-modal {
     position: fixed;
     z-index: 1;

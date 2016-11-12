@@ -8,9 +8,7 @@ const CodeIcon = props => {
       <i
         key={index}
         className={iconClass}
-        onClick={props.handleClick}
-        onMouseOver={props.handleHover}
-        ></i>
+        />
     );
   })
   let setTwo = props.icons[1].map(icon => {

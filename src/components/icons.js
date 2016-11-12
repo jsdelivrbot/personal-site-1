@@ -14,7 +14,7 @@ const icons = [
     "devicon-css3-plain",
     "devicon-html5-plain",
     "devicon-sass-original",
-    "devicon-boostrap-plain",
+    "devicon-bootstrap-plain",
     "devicon-foundation-plain",
     "devicon-photoshop-line",
     "devicon-illustrator-line"

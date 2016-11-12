@@ -34,7 +34,7 @@ class Home extends React.Component {
     this.setState({
       formClass: 'contact-modal hidden'
     })
-    
+
 
   }
 
@@ -43,7 +43,10 @@ class Home extends React.Component {
       <div className="home content">
         <h2 className="page-header">Hey Im Annie!</h2>
         <h4 className="intro">Developer, Designer, Artist, Dreamer, Enthusiast.</h4>
-        <button className="contact" onClick={this.handleClick}>Contact</button><br />
+        <button className="contact" onClick={this.handleClick}>Contact</button>
+        <button className="cv">CV</button>
+        <br />
+
         <i className="fa fa-heart-o sm" />
         <i className="fa fa-code" />
 

@@ -87,6 +87,16 @@ body {
   .about {
     height: 100%;
     overflow: auto;
+    .intro {
+      margin: 0;
+    }
+    .profile-photo {
+      width: 40%;
+      border-radius: 50%;
+      opacity: .85;
+      margin: 25px auto;
+      margin-bottom: 20%;
+    }
     p {
       font-size: 1em;
       font-family: 'Montserrat';

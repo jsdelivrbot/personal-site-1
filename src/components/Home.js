@@ -45,12 +45,10 @@ class Home extends React.Component {
         <h4 className="intro">Developer, Designer, Artist, Dreamer, Enthusiast.</h4>
 
         <button className="contact" onClick={this.handleClick}>Contact</button>
-        <a href="https://github.com/anniehck"><button className="github">Github</button></a>
+        <a href="https://github.com/anniehck" target="_blank"><button className="github">Github</button></a>
         <button className="cv">CV</button>
         <br />
           <i className="fa fa-code" />
-
-
 
         <div className={this.state.formClass}>
         {this.state.form}

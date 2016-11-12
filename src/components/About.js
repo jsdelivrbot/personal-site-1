@@ -16,10 +16,13 @@ class About extends React.Component {
       <div className="about content">
         <h2 className="page-header">About</h2>
 
-        <h4 className="intro">Just a short story.</h4>
+        <h4 className="intro">Hello world.</h4>
         <p>With a background in visual art, I initially found interest in web design and continued to pursue web development with Ruby and JavaScript. I find the capacity for programming languages to engage both conceptually creative and logical thinking is fascinating and I look forward to expanding myself in a field of constant innovation. While I work best collaboratively, I also thrive as an independent thinker and problem-solver. I am incredibly driven by my passions and my life-long goal is to never stop learning. I seek the challenge of creating and building for the world.
         </p>
 
+        <center>
+        <img src="https://s3.amazonaws.com/personal-site-development/images/self.jpg" className="profile-photo"/>
+        </center>
       </div>
     )
   }
